@@ -4,7 +4,7 @@
   "description": "组件入口",
   "main": "index.ts",
   "scripts": {
-    "build": "vue-tsc --noEmit && vite build"
+    "build": "rimraf ../../lib && vue-tsc --noEmit && vite build"
   },
   "keywords": [],
   "author": "gengbiao",
