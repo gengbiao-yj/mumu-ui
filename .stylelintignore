@@ -9,3 +9,7 @@ node_modules
 *.json
 *.md
 *.lock
+.npmrc
+packages/scss/acss
+packages/scss/base
+packages/scss/tools
