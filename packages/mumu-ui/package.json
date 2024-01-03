@@ -1,0 +1,19 @@
+{
+  "name": "@mumu-ui/mumu-ui",
+  "version": "1.0.0",
+  "description": "组件入口",
+  "main": "index.ts",
+  "scripts": {
+    "build": "vue-tsc --noEmit && vite build"
+  },
+  "keywords": [],
+  "author": "gengbiao",
+  "license": "ISC",
+  "dependencies": {
+    "@mumu-ui/card": "workspace:^1.0.0",
+    "@mumu-ui/foo": "workspace:^1.0.0"
+  },
+  "devDependencies": {
+    "vite-plugin-dts": "^3.6.3"
+  }
+}

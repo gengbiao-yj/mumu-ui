@@ -1,0 +1,23 @@
+{
+  "name": "@mumu-ui/example",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev:dev": "vite --mode dev",
+    "dev:uat": "vite --mode uat",
+    "dev:prod": "vite --mode prod",
+    "build:dev": "vue-tsc --noEmit && vite build --mode dev",
+    "build:uat": "vue-tsc --noEmit && vite build --mode uat",
+    "build:prod": "vue-tsc --noEmit && vite build --mode prod",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@mumu-ui/mumu-ui": "workspace:^1.0.0",
+    "element-plus": "^2.4.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.3",
+    "typescript": "^5.0.2"
+  }
+}

@@ -1,0 +1,13 @@
+# 针对编辑器和IDE之间定义和维护一致的编码样式
+
+# 控制 .editorconfig 是否生效的字段
+root = true
+# 匹配全部文件
+[*.{js,cjs,ts,jsx,tsx,vue,html,css,scss,md}]
+# 缩进风格，可选"space"、"tab"
+indent_style = space
+# 缩进的空格数
+indent_size = 2
+trim_trailing_whitespace = true
+# 在文件结尾插入新行
+insert_final_newline = true
