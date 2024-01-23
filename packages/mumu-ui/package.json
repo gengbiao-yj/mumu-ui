@@ -10,8 +10,8 @@
   "author": "gengbiao",
   "license": "ISC",
   "dependencies": {
-    "@mumu-ui/card": "workspace:^1.0.0",
-    "@mumu-ui/foo": "workspace:^1.0.0"
+    "@mumu-ui/icon": "workspace:^1.0.0",
+    "@mumu-ui/image-preview": "workspace:^1.0.0"
   },
   "devDependencies": {
     "vite-plugin-dts": "^3.6.3"

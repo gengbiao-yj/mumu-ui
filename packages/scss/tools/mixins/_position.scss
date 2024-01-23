@@ -34,7 +34,12 @@
 @mixin position($position, $args) {
   @each $o in top right bottom left {
     $i: index($args, $o);
-    @if $i and $i + 1 <= length($args) and type-of(nth($args, $i + 1)) == number
+    @if $i and
+      $i +
+      1 <=
+      length($args)
+      /// and type-of(nth($args, $i + 1)) == number  删除数字条件，可传入 10 10px calc(100vw - 10px)
+
     {
       #{$o}: nth($args, $i + 1);
     }

@@ -1,0 +1,78 @@
+<template>
+  <div>
+    <label>数值是1代表90度，2代表180度，3代表270度。</label>
+    <mumu-icon
+      color="#00a8ff"
+      height="32px"
+      icon="ep:bicycle"
+      :inline="true"
+      width="32px"
+    />
+    <mumu-icon
+      color="#fbc531"
+      height="32px"
+      icon="ep:bicycle"
+      :inline="true"
+      :rotate="1"
+      width="32px"
+    />
+    <mumu-icon
+      color="#fbc531"
+      height="32px"
+      icon="ep:bicycle"
+      :inline="true"
+      :rotate="2"
+      width="32px"
+    />
+    <mumu-icon
+      color="#fbc531"
+      height="32px"
+      icon="ep:bicycle"
+      :inline="true"
+      :rotate="3"
+      width="32px"
+    />
+  </div>
+  <div>
+    <label>直接指定旋转图标90度、180度或270度。</label>
+    <mumu-icon
+      color="#00a8ff"
+      height="32px"
+      icon="ep:finished"
+      :inline="true"
+      width="32px"
+    />
+    <mumu-icon
+      color="#fbc531"
+      height="32px"
+      icon="ep:finished"
+      :inline="true"
+      rotate="90deg"
+      width="32px"
+    />
+    <mumu-icon
+      color="#fbc531"
+      height="32px"
+      icon="ep:finished"
+      :inline="true"
+      rotate="180deg"
+      width="32px"
+    />
+    <mumu-icon
+      color="#fbc531"
+      height="32px"
+      icon="ep:finished"
+      :inline="true"
+      rotate="270deg"
+      width="32px"
+    />
+  </div>
+</template>
+
+<script lang="ts" setup></script>
+
+<style lang="scss" scoped>
+  svg {
+    display: inline-block;
+  }
+</style>

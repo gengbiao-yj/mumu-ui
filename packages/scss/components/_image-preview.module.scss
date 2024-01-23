@@ -1,0 +1,33 @@
+@import '../tools';
+@import '../acss/mp';
+@import '../base/var.module';
+
+@include b('preview') {
+  @include dimensions(800px, 600px);
+  @include position(fixed, top calc(50vh - 300px) left calc(50vw - 400px));
+
+  $bg-main: rgb(0 0 0 / 12%);
+  $bg-operator: rgb(0 0 0 / 24%);
+
+  overflow: hidden;
+  border-radius: 10px;
+
+  @include e('header') {
+    @include dimensions(800px, 50px);
+
+    cursor: pointer;
+    background-color: $bg-operator;
+  }
+  @include e('body') {
+    @include dimensions(800px, 500px);
+
+    overflow: hidden;
+    background-color: $bg-main;
+  }
+  @include e('footer') {
+    @include dimensions(800px, 50px);
+
+    cursor: pointer;
+    background-color: $bg-operator;
+  }
+}

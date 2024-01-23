@@ -1,4 +1,4 @@
 export const components = [
-  { text: 'Foo 组件示例', link: '/components/foo' },
-  { text: 'Card 卡片组件', link: '/components/card' },
+  { text: 'imagePreview 图片预览', link: '/components/image-preview' },
+  { text: 'iconify 图标', link: '/components/icon' },
 ] // end

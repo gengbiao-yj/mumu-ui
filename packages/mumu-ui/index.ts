@@ -1,9 +1,9 @@
-import Card from '@mumu-ui/card'
-import Foo from '@mumu-ui/foo'
+import Icon from '@mumu-ui/icon'
+import ImagePreview from '@mumu-ui/image-preview'
 import type { App } from 'vue'
 import '../scss/index.scss'
 
-const components = [Foo, Card] // components
+const components = [ImagePreview, Icon] // components
 
 // 全局动态添加组件
 const install = (app: App): void => {

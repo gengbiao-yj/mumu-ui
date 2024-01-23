@@ -1,5 +1,5 @@
 <template>
-  <mumu-card />
+  <mumu-image-preview />
 </template>
 
 <script lang="ts" setup></script>

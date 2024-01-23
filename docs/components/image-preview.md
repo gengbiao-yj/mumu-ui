@@ -1,8 +1,8 @@
-# Card 卡片组件
+# imagePreview 图片预览组件
 
 ## 基本使用
 
-<preview path="../demos/card/card-1.vue" title="基本使用" description=" "></preview>
+<preview path="../demos/image-preview/image-preview-1.vue" title="基本使用" description=" "></preview>
 
 ## 组件 API
 

@@ -1,7 +1,7 @@
 {
-  "name": "@mumu-ui/foo",
+  "name": "@mumu-ui/icon",
   "version": "1.0.0",
-  "description": "示例组件",
+  "description": "iconify 图标组件",
   "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,6 +10,7 @@
   "author": "gengbiao",
   "license": "ISC",
   "dependencies": {
+    "@iconify/vue": "^4.1.1",
     "@mumu-ui/utils": "workspace:^1.0.0"
   }
 }
