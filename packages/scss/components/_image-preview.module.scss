@@ -6,28 +6,131 @@
   @include dimensions(800px, 600px);
   @include position(fixed, top calc(50vh - 300px) left calc(50vw - 400px));
 
-  $bg-main: rgb(0 0 0 / 12%);
-  $bg-operator: rgb(0 0 0 / 24%);
+  $bg-main: rgb(0 0 0 / 24%);
+  $bg-operator: rgb(0 0 0 / 36%);
 
+  z-index: 99999;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 5px;
 
-  @include e('header') {
-    @include dimensions(800px, 50px);
-
+  // 操作按钮
+  @include m('operatingBtn') {
+    margin-left: 10px;
     cursor: pointer;
-    background-color: $bg-operator;
+    transition: all ease-in-out 0.2s;
+    &:hover {
+      scale: 1.1;
+    }
   }
+
+  // 标题
+  @include m('title') {
+    font-weight: bold;
+    color: #f9f9f9;
+  }
+
+  // header 栏
+  @include e('header') {
+    @include dimensions(100%, 50px);
+    @include grid(flex, null, null, null, flex-start, center);
+
+    padding: 0 15px;
+    cursor: move;
+    background-color: $bg-operator;
+    background-size: 3px 3px;
+    backdrop-filter: saturate(50%) blur(2px);
+    svg:nth-of-type(1) {
+      margin-left: auto !important;
+    }
+  }
+
+  // body 主体
   @include e('body') {
-    @include dimensions(800px, 500px);
+    @include dimensions(100%, calc(100% - 100px));
 
     overflow: hidden;
     background-color: $bg-main;
   }
-  @include e('footer') {
-    @include dimensions(800px, 50px);
 
-    cursor: pointer;
+  // footer 栏
+  @include e('footer') {
+    @include dimensions(100%, 50px);
+    @include grid(flex, null, null, null, center, center);
+
+    padding: 0 15px;
     background-color: $bg-operator;
+    background-size: 3px 3px;
+    backdrop-filter: saturate(50%) blur(2px);
+    svg {
+      margin-left: 20px !important;
+    }
+  }
+
+  // 翻页操作
+  @include e('paging') {
+    @include position(absolute, top calc(50% - 25px));
+    @include m('up') {
+      left: 30px;
+    }
+    @include m('down') {
+      right: 30px;
+    }
+
+    background-color: rgb(117 118 115 / 58%);
+    border-radius: 50%;
+    opacity: 0.6;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  // 边框拖拽
+  @include e('border-t') {
+    @include dimensions(100%, 10px);
+    @include position(absolute, top -5px left 0);
+
+    cursor: n-resize;
+  }
+  @include e('border-r') {
+    @include dimensions(10px, 100%);
+    @include position(absolute, top 0 right -5px);
+
+    cursor: e-resize;
+  }
+  @include e('border-b') {
+    @include dimensions(100%, 10px);
+    @include position(absolute, bottom -5px left 0);
+
+    cursor: s-resize;
+  }
+  @include e('border-l') {
+    @include dimensions(10px, 100%);
+    @include position(absolute, top 0 left -5px);
+
+    cursor: w-resize;
+  }
+  @include e('corner-tl') {
+    @include dimensions(10px, 10px);
+    @include position(absolute, top -5px left -5px);
+
+    cursor: nw-resize;
+  }
+  @include e('corner-tr') {
+    @include dimensions(10px, 10px);
+    @include position(absolute, top -5px right -5px);
+
+    cursor: sw-resize;
+  }
+  @include e('corner-bl') {
+    @include dimensions(10px, 10px);
+    @include position(absolute, bottom -5px left -5px);
+
+    cursor: ne-resize;
+  }
+  @include e('corner-br') {
+    @include dimensions(10px, 10px);
+    @include position(absolute, bottom -5px right -5px);
+
+    cursor: se-resize;
   }
 }

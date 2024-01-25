@@ -16,3 +16,15 @@ export function bem(
 
   return bemClass
 }
+
+export function bm(blockName: string, modifier?: string): string {
+  const blockClass = `mu-${blockName}`
+
+  let bemClass = blockClass
+
+  if (modifier) {
+    bemClass += `--${modifier}`
+  }
+
+  return bemClass
+}

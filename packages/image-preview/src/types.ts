@@ -1,5 +1,15 @@
-import { ExtractPropTypes } from 'vue'
+import { ExtractPropTypes, PropType } from 'vue'
 
-export const imagePreviewProps = {}
+export type PreviewImgType = {
+  title?: string
+  url: string
+}
+export const ImagePreviewProps = {
+  show: {
+    type: Boolean,
+    default: false,
+  },
+  list: Array as PropType<PreviewImgType[]>,
+}
 
-export type ImagePreviewProps = ExtractPropTypes<typeof imagePreviewProps>
+export type ImagePreviewPropsType = ExtractPropTypes<typeof ImagePreviewProps>

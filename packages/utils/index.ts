@@ -1,2 +1,2 @@
 export { emitter } from './src/emitter'
-export { bem } from './src/BEM.ts'
+export { bem, bm } from './src/BEM.ts'

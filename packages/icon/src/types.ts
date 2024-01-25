@@ -1,4 +1,4 @@
-import { PropType } from 'vue'
+import { ExtractPropTypes, PropType } from 'vue'
 
 export const IconProps = {
   icon: {
@@ -33,3 +33,4 @@ export const IconProps = {
    */
   rotate: Number,
 }
+export type IconPropsType = ExtractPropTypes<typeof IconProps>
