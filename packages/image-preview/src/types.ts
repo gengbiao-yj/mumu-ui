@@ -9,7 +9,10 @@ export const ImagePreviewProps = {
     type: Boolean,
     default: false,
   },
-  list: Array as PropType<PreviewImgType[]>,
+  list: {
+    type: Array as PropType<PreviewImgType[]>,
+    default: [] as PreviewImgType[],
+  },
 }
 
 export type ImagePreviewPropsType = ExtractPropTypes<typeof ImagePreviewProps>

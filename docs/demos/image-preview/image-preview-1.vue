@@ -8,7 +8,7 @@
       @click="show = !show"
     />
   </div>
-  <mumu-image-preview :list="images" :show="show" />
+  <mumu-image-preview v-model:show="show" :list="images" />
 </template>
 
 <script lang="ts" setup>
@@ -17,6 +17,7 @@
   import facemask from './images/3M.png'
   import heroes from './images/heroes.gif'
   import ninja from './images/ninja.png'
+  import dlm from './images/dlm.jfif'
 
   const show = ref(false)
   const images = ref([
@@ -35,6 +36,10 @@
     {
       url: heroes,
       title: 'heroes',
+    },
+    {
+      url: dlm,
+      title: 'dlm',
     },
   ])
 </script>

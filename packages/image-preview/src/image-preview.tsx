@@ -5,26 +5,33 @@ import {
   WindowOperate,
   ImageOperate,
   PagingOperate,
-  BorderOperate,
 } from './components/operatingButton.tsx'
+import { BorderOperate } from './components/resizeWindow.tsx'
+
 import { UseInit } from './useUtils/UseInit.ts'
-import { UseWindowDrag, UseWindowSize } from './useUtils/UseWindowOperate.ts'
+import { UseWindowDrag } from './useUtils/UseWindowOperate.ts'
+import { UseImageResize, UseImageDrag } from './useUtils/UseImageOperate.ts'
 
 const NAME = 'mumu-image-preview'
 
 export default defineComponent({
   name: NAME,
   props: ImagePreviewProps,
-  setup(props, context) {
-    console.log(props, context)
-
+  emits: ['update:show'],
+  setup(props, ctx) {
     // 初始化
-    const { previewImg, previewRef } = UseInit(props.list)
+    const { previewImg, previewRef, isWindowMax, imageRef, initIndex } =
+      UseInit(props.list)
     // 窗口拖拽
-    const { isWindowMax } = UseWindowSize(previewRef)
     const { refMouseDown, refMouseMove, refMouseUp } = UseWindowDrag(
       previewRef,
       isWindowMax
+    )
+    // 图片操作
+    const { zoomImg } = UseImageResize(imageRef, previewRef)
+    const { imgMouseDown, imgMousemove, imgMouseup } = UseImageDrag(
+      imageRef
+      // previewRef
     )
 
     return () => {
@@ -40,20 +47,49 @@ export default defineComponent({
               onMouseup={refMouseUp}
             >
               <span class={bm('preview', 'title')}>{title}</span>
-              <WindowOperate previewRef={previewRef} />
+              <WindowOperate
+                previewRef={previewRef}
+                imageRef={imageRef}
+                isWindowMax={isWindowMax}
+                onClose={() => ctx.emit('update:show', false)}
+              />
             </div>
             {/*图片展示区*/}
-            <div class={bem('preview', 'body')}>
-              <img src={url} />
+            <div
+              class={bem('preview', 'body')}
+              onWheel={(e) => e.preventDefault()}
+            >
+              <img
+                ref={imageRef}
+                src={url}
+                onWheel={zoomImg}
+                onMousedown={imgMouseDown}
+                onMousemove={imgMousemove}
+                onMouseup={imgMouseup}
+              />
             </div>
             {/*图片操作区*/}
             <div class={bem('preview', 'footer')}>
-              <ImageOperate />
+              <ImageOperate
+                imageRef={imageRef}
+                previewRef={previewRef}
+                url={url}
+              />
             </div>
             {/*翻页操作*/}
-            <PagingOperate />
+            <PagingOperate
+              initIndex={initIndex}
+              previewImg={previewImg}
+              list={props.list}
+              imageRef={imageRef}
+              previewRef={previewRef}
+            />
             {/*边界调整*/}
-            <BorderOperate />
+            <BorderOperate
+              previewRef={previewRef}
+              imageRef={imageRef}
+              isWindowMax={isWindowMax}
+            />
           </div>
         )
       )

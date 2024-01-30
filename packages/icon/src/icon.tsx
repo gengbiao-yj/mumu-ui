@@ -9,8 +9,8 @@ export type IconPropsType = ExtractPropTypes<typeof IconProps>
 export default defineComponent({
   name: NAME,
   props: IconProps,
-  setup(props, context) {
-    console.log(props, context)
+  setup(props) {
+    // console.log(props, context)
     return () => (
       <Icon {...props} class={NAME} icon={props.icon}>
         icon
