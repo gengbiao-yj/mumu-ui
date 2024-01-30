@@ -1,2 +1,2 @@
-export { emitter } from './src/emitter'
-export { testLog } from './src/test-log'
+export { emitter } from './src/emitter';
+export { bem, bm } from './src/BEM.ts';
