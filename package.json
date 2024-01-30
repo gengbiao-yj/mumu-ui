@@ -1,7 +1,7 @@
 {
   "name": "mumu-ui",
   "private": false,
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "./lib/mumu-ui.umd.js",
   "author": "gengbiao",
   "license": "ISC",
