@@ -23,7 +23,8 @@
     ".": {
       "require": "./lib/mumu-ui.umd.js",
       "import": "./lib/mumu-ui.es.js"
-    }
+    },
+    "./lib/style.css": "./lib/style.css"
   },
   "scripts": {
     "start:verdaccio": "pnpm verdaccio",
