@@ -8,6 +8,9 @@
 
   $bg-main: rgb(0 0 0 / 24%);
   $bg-operator: rgb(0 0 0 / 36%);
+  * {
+    box-sizing: border-box !important;
+  }
 
   z-index: 99999;
   overflow: hidden;

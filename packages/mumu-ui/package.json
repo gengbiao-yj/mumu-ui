@@ -6,6 +6,7 @@
   "scripts": {
     "build": "rimraf ../../lib && vue-tsc --noEmit && vite build"
   },
+  "style": "lib/index.css",
   "keywords": [],
   "author": "gengbiao",
   "license": "ISC",
