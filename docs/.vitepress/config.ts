@@ -31,7 +31,7 @@ export default defineConfig({
   title: 'mumu-admin-ui',
   description: 'MUMU Vue3企业级中后台组件库',
   lang: 'cn-ZH',
-  base: '/',
+  base: '/mumu-ui/',
   lastUpdated: true,
   themeConfig: {
     logo: '/logo.jpg',
