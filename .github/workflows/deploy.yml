@@ -35,7 +35,7 @@ jobs:
           cache: 'pnpm'
 
       - name: Install deps
-        run: pnpm i # 下载依赖
+        run: pnpm i --registry https://registry.npmmirror.com # 下载依赖
 
       - name: Build docs
         run: pnpm docs:build # 执行打包命令
